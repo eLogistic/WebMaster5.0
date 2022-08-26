@@ -2,11 +2,13 @@ package com.webmasters50.eLogistic;
 
 public class Empleado {
 
+    //Atributos
     private String nombre;
     private String correo;
     private String empresa;
     private String rol;
 
+    //Constructor
     public Empleado(String nombre, String correo, String empresa, String rol) {
         this.nombre = nombre;
         this.correo = correo;
@@ -14,6 +16,7 @@ public class Empleado {
         this.rol = rol;
     }
 
+    //Getters and Setters
     public String getNombre() {
         return nombre;
     }
