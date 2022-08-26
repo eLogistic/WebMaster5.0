@@ -1,43 +1,43 @@
 package com.webmasters50.eLogistic;
 
-
 public class MovimientoDinero {
-
     //Atributos
-    private int monto;
-    private String concepto;
-    private String usuario;
-
+    private String usuarioEncargado;
+    private String conceptoMovimiento;
+    private double montoMovimiento;
     //Constructor
-    public MovimientoDinero(int monto, String concepto, String usuario) {
-        this.monto = monto;
-        this.concepto = concepto;
-        this.usuario = usuario;
+
+    public MovimientoDinero(String usuarioEncargado, String conceptoMovimiento, double montoMovimiento) {
+        this.usuarioEncargado = usuarioEncargado;
+        this.conceptoMovimiento = conceptoMovimiento;
+        this.montoMovimiento = montoMovimiento;
     }
 
-    //Getters and Sethers
+    //Método
 
-    public int getMonto() {
-        return monto;
+    //Getters y Setters
+
+    public String getUsuarioEncargado() {
+        return usuarioEncargado;
     }
 
-    public void setMonto(int monto) {
-        this.monto = monto;
+    public void setUsuarioEncargado(String usuarioEncargado) {
+        this.usuarioEncargado = usuarioEncargado;
     }
 
-    public String getConcepto() {
-        return concepto;
+    public String getConceptoMovimiento() {
+        return conceptoMovimiento;
     }
 
-    public void setConcepto(String concepto) {
-        this.concepto = concepto;
+    public void setConceptoMovimiento(String conceptoMovimiento) {
+        this.conceptoMovimiento = conceptoMovimiento;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public double getMontoMovimiento() {
+        return montoMovimiento;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setMontoMovimiento(double montoMovimiento) {
+        this.montoMovimiento = montoMovimiento;
     }
 }
