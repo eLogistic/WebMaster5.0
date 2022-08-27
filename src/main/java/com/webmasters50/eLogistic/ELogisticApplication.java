@@ -18,7 +18,7 @@ public class ELogisticApplication {
 		System.out.println(egreso1.getConceptoMovimiento());
 
 		ingreso1.setConceptoMovimiento("Compra Cafe");
-		egreso1.setConceptoMovimiento("Devolucion compra de cafe");
+		egreso1.setConceptoMovimiento("Devolucion compra de el cafe");
 		System.out.println(ingreso1.getConceptoMovimiento());
 		System.out.println(egreso1.getConceptoMovimiento());
 		System.out.println(ingreso1.getUsuarioEncargado());
