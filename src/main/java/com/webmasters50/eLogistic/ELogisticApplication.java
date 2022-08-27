@@ -13,7 +13,7 @@ public class ELogisticApplication {
 		System.out.println(ingreso1.getMontoMovimiento());
 		System.out.println(ingreso1.getConceptoMovimiento());
 
-		MovimientoDinero egreso1 = new MovimientoDinero("EFVP","Devolucion Televisor", -100000);
+		MovimientoDinero egreso1 = new MovimientoDinero("EFV","Devolucion Televisor", -100000);
 		System.out.println(egreso1.getMontoMovimiento());
 		System.out.println(egreso1.getConceptoMovimiento());
 
