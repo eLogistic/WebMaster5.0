@@ -8,15 +8,26 @@ public class Empresa {
     private Integer telefonoEmpresa;
     private Integer nitEmpresa;
 
+    //se adiciona un nuevo atributo de la clase MovimientoDinero para crear la relacion de entidad
+
+    private MovimientoDinero movimientos;
+
     //Constructor
-    public Empresa(String nombreEmpresa, String direccionEmpresa, Integer telefonoEmpresa, Integer nitEmpresa) {
+
+
+    public Empresa(String nombreEmpresa, String direccionEmpresa, Integer telefonoEmpresa, Integer nitEmpresa, MovimientoDinero movimientos) {
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.nitEmpresa = nitEmpresa;
+        this.movimientos = movimientos;
     }
 
     //Getters and Setters
+
+    public MovimientoDinero getMovimientos() {
+        return movimientos;
+    }
     public String getNombreEmpresa() {
         return nombreEmpresa;
     }
@@ -40,5 +51,19 @@ public class Empresa {
     }
     public void setNitEmpresa(Integer nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
+    }
+    public void setMovimientos(MovimientoDinero movimientos) {
+        this.movimientos = movimientos;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "nombreEmpresa='" + nombreEmpresa + '\'' +
+                ", direccionEmpresa='" + direccionEmpresa + '\'' +
+                ", telefonoEmpresa=" + telefonoEmpresa +
+                ", nitEmpresa=" + nitEmpresa +
+                ", movimientos=" + movimientos +
+                '}';
     }
 }

@@ -8,15 +8,28 @@ public class Empleado {
     private String empresa;
     private String rol;
 
+    //se adiciona un nuevo atributo de la clase empresa para crear la relacion de entidad
+
+    private Empresa empresas;
+
     //Constructor
-    public Empleado(String nombre, String correo, String empresa, String rol) {
+
+
+    public Empleado(String nombre, String correo, String empresa, String rol, Empresa empresas) {
         this.nombre = nombre;
         this.correo = correo;
         this.empresa = empresa;
         this.rol = rol;
+        this.empresas = empresas;
     }
 
     //Getters and Setters
+
+
+    public Empresa getEmpresas() {
+        return empresas;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -49,5 +62,18 @@ public class Empleado {
         this.rol = rol;
     }
 
+    public void setEmpresas(Empresa empresas) {
+        this.empresas = empresas;
+    }
 
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", correo='" + correo + '\'' +
+                ", empresa='" + empresa + '\'' +
+                ", rol='" + rol + '\'' +
+                ", empresas=" + empresas +
+                '}';
+    }
 }

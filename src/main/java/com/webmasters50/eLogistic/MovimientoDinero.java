@@ -40,4 +40,13 @@ public class MovimientoDinero {
     public void setMontoMovimiento(double montoMovimiento) {
         this.montoMovimiento = montoMovimiento;
     }
+
+    @Override
+    public String toString() {
+        return "MovimientoDinero{" +
+                "usuarioEncargado='" + usuarioEncargado + '\'' +
+                ", conceptoMovimiento='" + conceptoMovimiento + '\'' +
+                ", montoMovimiento=" + montoMovimiento +
+                '}';
+    }
 }
