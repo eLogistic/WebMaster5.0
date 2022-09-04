@@ -1,18 +1,34 @@
 package com.webmasters50.eLogistic.entidades;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="empresa")
 public class Empresa {
 
     //Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long Id;
+    @Column(name="nombreEmpresa")
     private String nombreEmpresa;
+    @Column(name="direccionEmpresa")
     private String direccionEmpresa;
+    @Column(name="telefonoEmpresa")
     private Integer telefonoEmpresa;
+    @Column(name="nitEmpresa")
     private Integer nitEmpresa;
 
     //se adiciona un nuevo atributo de la clase MovimientoDinero para crear la relacion de entidad
 
+    @Transient
     private MovimientoDinero movimientos;
 
     //Constructor
+
+    public Empresa(){
+
+    }
 
 
     public Empresa(String nombreEmpresa, String direccionEmpresa, Integer telefonoEmpresa, Integer nitEmpresa, MovimientoDinero movimientos) {

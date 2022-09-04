@@ -1,11 +1,27 @@
 package com.webmasters50.eLogistic.entidades;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="movimientodinero")
 public class MovimientoDinero {
+
+
     //Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long Id;
+    @Column(name="usuarioEncargado")
     private String usuarioEncargado;
+    @Column(name="conceptoMovimiento")
     private String conceptoMovimiento;
+    @Column(name="montoMovimiento")
     private double montoMovimiento;
     //Constructor
+
+    public MovimientoDinero() {
+    }
 
     public MovimientoDinero(String usuarioEncargado, String conceptoMovimiento, double montoMovimiento) {
         this.usuarioEncargado = usuarioEncargado;
