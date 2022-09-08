@@ -8,12 +8,14 @@ public class Empleado {
     private String empresa;
     private String rol;
 
+    MovimientoDinero movimiento1;
     //Constructor
-    public Empleado(String nombre, String correo, String empresa, String rol) {
+    public Empleado(String nombre, String correo, String empresa, String rol, MovimientoDinero movimiento1) {
         this.nombre = nombre;
         this.correo = correo;
         this.empresa = empresa;
         this.rol = rol;
+        this.movimiento1 = movimiento1;
     }
 
     //Getters and Setters
@@ -49,5 +51,22 @@ public class Empleado {
         this.rol = rol;
     }
 
+    public MovimientoDinero getMovimiento1() {
+        return movimiento1;
+    }
 
+    public void setMovimiento1(MovimientoDinero movimiento1) {
+        this.movimiento1 = movimiento1;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", correo='" + correo + '\'' +
+                ", empresa='" + empresa + '\'' +
+                ", rol='" + rol + '\'' +
+                ", movimiento1=" + this.movimiento1 +
+                '}';
+    }
 }
