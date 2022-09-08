@@ -3,10 +3,7 @@ package com.webmasters50.eLogistic.controladores;
 
 import com.webmasters50.eLogistic.entidades.Empleado;
 import com.webmasters50.eLogistic.servicios.ServiciosEmpleados;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -63,5 +60,19 @@ public class ControlEmpleados {
         return this.servicesE.crearEmpleado(e);
     }
 
+//editar un registro
+
+    @PutMapping("/empleados/{id}")
+    public Empleado actualizarEmpleado(@PathVariable Long id, @RequestBody Empleado actEmpleado){
+
+        return this.servicesE.actualizarE(id, actEmpleado);
+
+    }
+
+    //borrar un registro
+    @DeleteMapping("/eliminar/{id}")
+    public Empleado eliminarEmpleado(@PathVariable(value = "id") Long id){
+        return this.servicesE.eliminarP(id);
+    }
 
 }

@@ -61,6 +61,22 @@ public class ServiciosEmpleados {
         return this.repositorioEm.save(nuevoEmpleado);
     }
 
+    //metodo para actualizar
+
+    public Empleado actualizarE(Long id, Empleado e){
+        Empleado empleadoActual = repositorioEm.findById(id).orElseThrow();
+        empleadoActual.setNombre(e.getNombre());
+        empleadoActual.setRol(e.getRol());
+        return this.repositorioEm.save(empleadoActual);
+    }
+
+    //metodo para eliminar
+
+    public Empleado eliminarP(Long id){
+         Empleado empleadoActual = repositorioEm.findById(id).orElseThrow();// pero esta muestra lo que se borró
+         this.repositorioEm.deleteById(id);//solo con esta linea funciona
+         return empleadoActual;
+    }
 
 }
 
