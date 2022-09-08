@@ -28,4 +28,7 @@ public class ServiceEmpresa {
     public List<Empresa> getRepositorio(){
         return this.repositorio.findAll();
     }
+    public Empresa crearRegistro(Empresa empresa1){
+       return this.repositorio.save(empresa1);
+    }
 }

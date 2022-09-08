@@ -3,6 +3,8 @@ package com.webmasters50.eLogistic.Controllers;
 import com.webmasters50.eLogistic.Entities.Empresa;
 import com.webmasters50.eLogistic.Services.ServiceEmpresa;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -27,5 +29,10 @@ public class ControlEmpresa {
     @GetMapping("/informacion")
     public List<Empresa> informacion(){
         return this.se1.getRepositorio();
+    }
+
+    @PostMapping("/informacion")
+    public Empresa crearEmpresa(@RequestBody Empresa emp){
+        return this.se1.crearRegistro(emp);
     }
 }
