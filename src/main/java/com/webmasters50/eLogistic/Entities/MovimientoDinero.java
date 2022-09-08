@@ -1,4 +1,4 @@
-package com.webmasters50.eLogistic;
+package com.webmasters50.eLogistic.Entities;
 
 public class MovimientoDinero {
     //Atributos

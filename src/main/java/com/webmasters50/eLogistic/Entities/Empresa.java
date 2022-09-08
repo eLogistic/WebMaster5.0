@@ -1,4 +1,4 @@
-package com.webmasters50.eLogistic;
+package com.webmasters50.eLogistic.Entities;
 
 public class Empresa {
 
@@ -17,9 +17,7 @@ public class Empresa {
     }
 
     //Getters and Setters
-    public String getNombreEmpresa() {
-        return nombreEmpresa;
-    }
+    public String getNombreEmpresa() {return nombreEmpresa;}
     public void setNombreEmpresa(String nombreEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
     }

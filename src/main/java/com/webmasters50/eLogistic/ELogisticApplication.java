@@ -9,7 +9,7 @@ public class ELogisticApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ELogisticApplication.class, args);
 
-		MovimientoDinero ingreso1 = new MovimientoDinero("evasco", "Compra Televisor",100000);
+		/*MovimientoDinero ingreso1 = new MovimientoDinero("evasco", "Compra Televisor",100000);
 		System.out.println(ingreso1.getMontoMovimiento());
 		System.out.println(ingreso1.getConceptoMovimiento());
 
@@ -23,6 +23,8 @@ public class ELogisticApplication {
 		System.out.println(egreso1.getConceptoMovimiento());
 		System.out.println(ingreso1.getUsuarioEncargado());
 		System.out.println(egreso1.getUsuarioEncargado());
+
+		 */
 	}
 
 }
