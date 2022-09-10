@@ -1,6 +1,6 @@
-package com.webmasters50.eLogistic.repositorios;
+package com.webmasters50.eLogistic.Repositories;
 
-import com.webmasters50.eLogistic.entidades.Empresa;
+import com.webmasters50.eLogistic.Entities.Empresa;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

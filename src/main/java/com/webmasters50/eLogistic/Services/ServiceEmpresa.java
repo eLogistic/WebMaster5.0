@@ -1,16 +1,18 @@
-package com.webmasters50.eLogistic.servicios;
+package com.webmasters50.eLogistic.Services;
 
-import com.webmasters50.eLogistic.entidades.Empresa;
-import com.webmasters50.eLogistic.repositorios.RepositoryEmpresa;
+import com.webmasters50.eLogistic.Entities.Empleado;
+import com.webmasters50.eLogistic.Entities.Empresa;
+import com.webmasters50.eLogistic.Repositories.RepositoryEmpresa;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ServiciosEmpresas {
+public class ServiceEmpresa {
 /*    Empresa ep1;
     ServiceEmpleado se1= new ServiceEmpleado();
-    public ServiciosEmpresas(){
+    public ServiceEmpresa(){
         Empleado emple1 = this.se1.getEmpleado();
         this.ep1 = new Empresa("Elogistic","cra11",12345,6896523,emple1);
     }
@@ -20,7 +22,7 @@ public class ServiciosEmpresas {
     }
 */
     private RepositoryEmpresa repositorio;
-    public ServiciosEmpresas(RepositoryEmpresa repositorio){
+    public ServiceEmpresa(RepositoryEmpresa repositorio){
         this.repositorio = repositorio;
     }
     public List<Empresa> getRepositorio(){
