@@ -1,7 +1,7 @@
-package com.webmasters50.eLogistic.Controllers;
+package com.webmasters50.eLogistic.controladores;
 
-import com.webmasters50.eLogistic.Entities.Empresa;
-import com.webmasters50.eLogistic.Services.ServiceEmpresa;
+import com.webmasters50.eLogistic.entidades.Empresa;
+import com.webmasters50.eLogistic.servicios.ServiciosEmpresas;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class ControlEmpresa {
 /*
-    ServiceEmpresa se1 = new ServiceEmpresa();
+    ServiciosEmpresas se1 = new ServiciosEmpresas();
     Empresa emp1;
     public ControlEmpresa(){
         this.emp1 = this.se1.getEmpresa();
@@ -22,8 +22,8 @@ public class ControlEmpresa {
         return this.emp1;
     }
 */
-    ServiceEmpresa se1;
-    public ControlEmpresa(ServiceEmpresa se1){
+    ServiciosEmpresas se1;
+    public ControlEmpresa(ServiciosEmpresas se1){
         this.se1 = se1;
     }
     @GetMapping("/informacion")

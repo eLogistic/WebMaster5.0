@@ -1,4 +1,4 @@
-package com.webmasters50.eLogistic.Entities;
+package com.webmasters50.eLogistic.entidades;
 
 import javax.persistence.*;
 

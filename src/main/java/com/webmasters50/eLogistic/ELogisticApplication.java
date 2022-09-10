@@ -1,7 +1,7 @@
 package com.webmasters50.eLogistic;
 
-import com.webmasters50.eLogistic.Entities.Empleado;
-import com.webmasters50.eLogistic.Entities.Empresa;
+import com.webmasters50.eLogistic.entidades.Empleado;
+import com.webmasters50.eLogistic.entidades.Empresa;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
