@@ -9,6 +9,7 @@ import java.util.List;
 @RestController
 public class ControlEmpresas {
 
+
     ServiciosEmpresas servicesE;
 /*
     //constructor
@@ -53,13 +54,10 @@ public class ControlEmpresas {
     public Empresa actualizarEmpresas (@PathVariable Long id, @RequestBody Empresa actEmpresa){
 
         return this.servicesE.actualizarEmpre(id,actEmpresa);
-        //return this.servicesE.actualizarEmpre (id, actEmpresa);
-
-    }
+      }
 
     //borrar un registro
-    @DeleteMapping("/eliminarempresa" +
-            "/{id}")
+    @DeleteMapping("/eliminarempresa/{id}")
     public Empresa eliminarEmpresa(@PathVariable(value = "id") Long id){
         return this.servicesE.eliminarEmpre(id);
     }
