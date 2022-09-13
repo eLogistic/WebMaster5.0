@@ -56,7 +56,7 @@ public class ServiciosEmpresas {
     public Empresa actualizarEmpre(Long id, Empresa e){
         Empresa empresaActual = repositorioEmpre.findById(id).orElseThrow();
         empresaActual.setNombreEmpresa(e.getNombreEmpresa());
-        empresaActual.setNitEmpresa(e.getNitEmpresa());
+        //empresaActual.setNitEmpresa(e.getNitEmpresa());
         return this.repositorioEmpre.save(empresaActual);
     }
 

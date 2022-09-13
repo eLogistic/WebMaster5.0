@@ -50,9 +50,12 @@ public class ControlEmpleados {
     }
 
     @GetMapping("/empleados")
-
     public List<Empleado> listaEmpleados(){
         return this.servicesE.getListaEmpleados();
+    }
+    @GetMapping("/empleados/{id}")
+    public Empleado llamarEmpleado(@PathVariable Long id){
+        return this.servicesE.getLlamarEmpleado(id);
     }
 
     @PostMapping("/empleados")
