@@ -1,5 +1,6 @@
 package com.webmasters50.eLogistic.servicios;
 
+import com.webmasters50.eLogistic.entidades.Empleado;
 import com.webmasters50.eLogistic.entidades.Empresa;
 import com.webmasters50.eLogistic.entidades.MovimientoDinero;
 import com.webmasters50.eLogistic.repositorios.RepositorioEmpresas;
@@ -41,6 +42,12 @@ public class ServiciosMovimientoDinero {
     //metodo para visualizar a partir del metodo get
     public List<MovimientoDinero> getListaMovDinero() {
         return this.repositorioMovDinero.findAll();
+    }
+
+    //metodo para llamar un solo movimiento
+
+    public MovimientoDinero getLlamarMovimiento(Long id) {
+        return this.repositorioMovDinero.findById(id).orElseThrow();
     }
 
     //metodo para crear a partir del post
