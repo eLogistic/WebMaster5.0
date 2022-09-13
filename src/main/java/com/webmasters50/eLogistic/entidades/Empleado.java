@@ -8,9 +8,14 @@ import javax.persistence.*;
 public class Empleado {
 
     //Atributos
+/*
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
+   */
+    @Id
+    private Long identificacion;
+
     @Column(name="nombre")
     private String nombre;
     @Column(name="correo")
@@ -21,7 +26,8 @@ public class Empleado {
     private String rol;
 
     //se adiciona un nuevo atributo de la clase empresa para crear la relacion de entidad
-    @Transient
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "nitEmpresa")
     private Empresa empresas;
 
     //Constructor
@@ -29,7 +35,7 @@ public class Empleado {
     public Empleado(){
 
     }
-
+/*
     public Empleado(String nombre, String correo, String empresa, String rol, Empresa empresas) {
         this.nombre = nombre;
         this.correo = correo;
@@ -37,9 +43,18 @@ public class Empleado {
         this.rol = rol;
         this.empresas = empresas;
     }
+ */
 
     //Getters and Setters
 
+
+    public Long getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(Long identificacion) {
+        this.identificacion = identificacion;
+    }
 
     public Empresa getEmpresas() {
         return empresas;
@@ -80,7 +95,7 @@ public class Empleado {
     public void setEmpresas(Empresa empresas) {
         this.empresas = empresas;
     }
-
+/*
     @Override
     public String toString() {
         return "Empleado{" +
@@ -91,4 +106,7 @@ public class Empleado {
                 ", empresas=" + empresas +
                 '}';
     }
+
+ */
+
 }
