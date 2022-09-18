@@ -25,7 +25,7 @@ public class Empleado {
     private String rol;
 
     //se adiciona un nuevo atributo de la clase empresa para crear la relacion de entidad
-    @ManyToOne(optional = true)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "nitEmpresa")
     private Empresa empresas;
 
