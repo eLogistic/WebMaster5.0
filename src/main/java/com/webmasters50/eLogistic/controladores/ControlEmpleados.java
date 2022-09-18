@@ -64,7 +64,7 @@ public class ControlEmpleados {
 
 
     @PostMapping("/empleados")
-    public Empleado crearEmpleado(@RequestBody Empleado e, Model model){
+    public Empleado crearEmpleado(@ModelAttribute Empleado e, Model model){
         model.addAttribute(e);
         return this.servicesE.crearEmpleado(e);
     }
