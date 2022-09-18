@@ -31,7 +31,8 @@ public class FrontControlador {
     }
 
     @GetMapping("empleados/nuevo")
-    public String nuevoEmpleado(){
+    public String nuevoEmpleado(Model modelNuevoEm){
+        modelNuevoEm.addAttribute("empleados", new Empleado());
         return "nuevo-empleado";
 
     }
