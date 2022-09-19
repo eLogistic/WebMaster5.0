@@ -45,6 +45,11 @@ public class ServiciosEmpresas {
         return this.repositorioEmpre.findAll();
     }
 
+    //llamar uno solo
+    public Empresa getLlamarEmpre(Long id){
+        return this.repositorioEmpre.findById(id).orElseThrow();
+    }
+
     //metodo para crear a partir del post
 
     public Empresa crearEmpresa(Empresa nuevaEmpresa){
