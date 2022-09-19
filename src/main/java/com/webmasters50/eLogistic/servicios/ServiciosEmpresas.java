@@ -1,9 +1,15 @@
 package com.webmasters50.eLogistic.servicios;
 
 import com.webmasters50.eLogistic.entidades.Empresa;
-import com.webmasters50.eLogistic.entidades.MovimientoDinero;
+import com.webmasters50.eLogistic.repositorios.RepositorioEmpresas;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class ServiciosEmpresas {
+
+/*
     Empresa e1;
     //atributo para relacionar servicios movimiento de dinero
     ServiciosMovimientoDinero serMovDin1 = new ServiciosMovimientoDinero();
@@ -19,3 +25,49 @@ public class ServiciosEmpresas {
         return e1;
     }
 }
+
+
+ */
+
+// se crean servicios empresas
+
+    private RepositorioEmpresas repositorioEmpre;
+
+    //Consutructor usando repositorio
+
+    public ServiciosEmpresas(RepositorioEmpresas repositorioEmpre){
+        this.repositorioEmpre = repositorioEmpre;
+    }
+
+    //metodo getter para obtener lista empresas
+    //metodo para visualizar a partir del metodo get
+    public List<Empresa> getListaEmpre() {
+        return this.repositorioEmpre.findAll();
+    }
+
+    //metodo para crear a partir del post
+
+    public Empresa crearEmpresa(Empresa nuevaEmpresa){
+        return this.repositorioEmpre.save(nuevaEmpresa);
+    }
+
+    //metodo para actualizar
+
+    public Empresa actualizarEmpre(Long id, Empresa e){
+        Empresa empresaActual = repositorioEmpre.findById(id).orElseThrow();
+        empresaActual.setNombreEmpresa(e.getNombreEmpresa());
+        //empresaActual.setNitEmpresa(e.getNitEmpresa());
+        return this.repositorioEmpre.save(empresaActual);
+    }
+
+    //metodo para eliminar
+
+    public Empresa eliminarEmpre (Long id){
+        Empresa empresaActual = repositorioEmpre.findById(id).orElseThrow();// pero esta muestra lo que se borró
+        this.repositorioEmpre.deleteById(id);//solo con esta linea funciona
+        return empresaActual;
+    }
+
+}
+
+

@@ -1,6 +1,7 @@
 package com.webmasters50.eLogistic.entidades;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="empresa")
@@ -8,21 +9,26 @@ public class Empresa {
 
     //Atributos
     @Id
+    private Long nitEmpresa;
+
+
+    /*
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
+
+     */
     @Column(name="nombreEmpresa")
     private String nombreEmpresa;
     @Column(name="direccionEmpresa")
     private String direccionEmpresa;
     @Column(name="telefonoEmpresa")
     private Integer telefonoEmpresa;
-    @Column(name="nitEmpresa")
-    private Integer nitEmpresa;
+
 
     //se adiciona un nuevo atributo de la clase MovimientoDinero para crear la relacion de entidad
 
-    @Transient
-    private MovimientoDinero movimientos;
+    @OneToMany(mappedBy = "empresas")
+    private Set<MovimientoDinero> movimientos;
 
     //Constructor
 
@@ -30,7 +36,7 @@ public class Empresa {
 
     }
 
-
+/*
     public Empresa(String nombreEmpresa, String direccionEmpresa, Integer telefonoEmpresa, Integer nitEmpresa, MovimientoDinero movimientos) {
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
@@ -39,9 +45,11 @@ public class Empresa {
         this.movimientos = movimientos;
     }
 
+ */
+
     //Getters and Setters
 
-    public MovimientoDinero getMovimientos() {
+    public Set<MovimientoDinero> getMovimientos() {
         return movimientos;
     }
     public String getNombreEmpresa() {
@@ -62,16 +70,17 @@ public class Empresa {
     public void setTelefonoEmpresa(Integer telefonoEmpresa) {
         this.telefonoEmpresa = telefonoEmpresa;
     }
-    public Integer getNitEmpresa() {
+    public Long getNitEmpresa() {
         return nitEmpresa;
     }
-    public void setNitEmpresa(Integer nitEmpresa) {
+    public void setNitEmpresa(Long nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
     }
-    public void setMovimientos(MovimientoDinero movimientos) {
+    public void setMovimientos(Set<MovimientoDinero> movimientos) {
         this.movimientos = movimientos;
     }
 
+    /*
     @Override
     public String toString() {
         return "Empresa{" +
@@ -82,4 +91,6 @@ public class Empresa {
                 ", movimientos=" + movimientos +
                 '}';
     }
+
+     */
 }

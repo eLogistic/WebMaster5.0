@@ -55,6 +55,13 @@ public class ServiciosEmpleados {
     return this.repositorioEm.findAll();
     }
 
+    //metodo para llamar un solo empleado
+
+    public Empleado getLlamarEmpleado(Long id) {
+        return this.repositorioEm.findById(id).orElseThrow();
+    }
+
+
     //metodo para crear a partir del post
 
     public Empleado crearEmpleado(Empleado nuevoEmpleado){

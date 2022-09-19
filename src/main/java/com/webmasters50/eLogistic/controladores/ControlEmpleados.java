@@ -3,6 +3,7 @@ package com.webmasters50.eLogistic.controladores;
 
 import com.webmasters50.eLogistic.entidades.Empleado;
 import com.webmasters50.eLogistic.servicios.ServiciosEmpleados;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,17 +49,28 @@ public class ControlEmpleados {
         this.servicesE=servicesE;
 
     }
-
+/*
     @GetMapping("/empleados")
-
     public List<Empleado> listaEmpleados(){
         return this.servicesE.getListaEmpleados();
     }
 
+ */
+    @GetMapping("/empleados/{id}")
+    public Empleado llamarEmpleado(@PathVariable Long id){
+        return this.servicesE.getLlamarEmpleado(id);
+    }
+
+
+
     @PostMapping("/empleados")
-    public Empleado crearEmpleado(@RequestBody Empleado e){
+    public Empleado crearEmpleado(@ModelAttribute Empleado e, Model model){
+        model.addAttribute(e);
         return this.servicesE.crearEmpleado(e);
     }
+
+
+
 
 //editar un registro
 
