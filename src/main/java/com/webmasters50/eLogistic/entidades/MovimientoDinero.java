@@ -1,6 +1,8 @@
 package com.webmasters50.eLogistic.entidades;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -25,6 +27,7 @@ public class MovimientoDinero {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "nitEmpresa", nullable = false)
+    @JsonIgnoreProperties(value = "movimientos")
     private Empresa empresas;
     //Constructor
 
@@ -83,7 +86,6 @@ public class MovimientoDinero {
         this.montoMovimiento = montoMovimiento;
     }
 
-    /*
     @Override
     public String toString() {
         return "MovimientoDinero{" +
@@ -93,5 +95,5 @@ public class MovimientoDinero {
                 '}';
     }
 
-     */
+
 }
