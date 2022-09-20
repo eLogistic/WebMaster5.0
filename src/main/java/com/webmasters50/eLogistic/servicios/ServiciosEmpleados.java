@@ -74,6 +74,9 @@ public class ServiciosEmpleados {
         Empleado empleadoActual = repositorioEm.findById(id).orElseThrow();
         empleadoActual.setNombre(e.getNombre());
         empleadoActual.setRol(e.getRol());
+        empleadoActual.setCorreo(e.getCorreo());
+        empleadoActual.setEmpresa(e.getEmpresa());
+        empleadoActual.setEmpresas(e.getEmpresas());
         return this.repositorioEm.save(empleadoActual);
     }
 

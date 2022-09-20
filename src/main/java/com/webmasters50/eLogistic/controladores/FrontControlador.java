@@ -5,6 +5,7 @@ import com.webmasters50.eLogistic.servicios.ServiciosEmpleados;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -34,7 +35,13 @@ public class FrontControlador {
     public String nuevoEmpleado(Model modelNuevoEm){
         modelNuevoEm.addAttribute("empleados", new Empleado());
         return "nuevo-empleado";
+    }
 
+    @GetMapping("/empleados/{id}")
+    public String actualizarEmpleado(@PathVariable Long id, Model model){
+        Empleado empleadoFind = this.servicesE.getLlamarEmpleado(id);
+        model.addAttribute("empleadoFind", empleadoFind);
+        return "actualizar-empleado";
     }
 
 }
