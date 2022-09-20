@@ -43,6 +43,11 @@ public class ControlEmpresas {
         return this.servicesE.getListaEmpre();
     }
 
+    @GetMapping("/empresas/{id}")
+    public Empresa llamarEmpresa(@PathVariable Long id){
+        return this.servicesE.getLlamarEmpre(id);
+    }
+
     @PostMapping("/empresas")
     public Empresa crearEmpresa(@RequestBody Empresa e){
         return this.servicesE.crearEmpresa(e);

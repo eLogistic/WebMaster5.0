@@ -2,6 +2,8 @@ package com.webmasters50.eLogistic.entidades;
 
 
 import javax.persistence.*;
+import javax.persistence.Table;
+
 
 @Entity
 @Table(name="empleado")

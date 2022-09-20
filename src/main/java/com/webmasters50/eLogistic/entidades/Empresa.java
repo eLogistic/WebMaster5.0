@@ -1,5 +1,7 @@
 package com.webmasters50.eLogistic.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -28,6 +30,7 @@ public class Empresa {
     //se adiciona un nuevo atributo de la clase MovimientoDinero para crear la relacion de entidad
 
     @OneToMany(mappedBy = "empresas")
+    @JsonIgnoreProperties(value="empresas") //para que no se cree el ciclo infinito en el json
     private Set<MovimientoDinero> movimientos;
 
     //Constructor

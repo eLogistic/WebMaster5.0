@@ -14,15 +14,16 @@
         <h1 class="display-5 fw-bold mb-5">Nuevo Empleado</h1>
         <div class="col-lg-5 mx-auto">
 
-            <form th:action="@{/empleados}" th:method="post" th:object="${empleado}" class="d-flex flex-column gap-3 aling-items-center">
-                <input field="*{identificacion}" class="form-control" type="number" placeholder="Identificacion" />
-                <input field="*{nombre}" class="form-control" type="text" placeholder="Nombre" />
-                <input field="*{correo}" class="form-control" type="text" placeholder="Correo" />
-                <input field="*{rol}" class="form-control" type="text" placeholder="Rol" />
-                <input field="*{empresa}" class="form-control" type="text" placeholder="Empresa" />
-                <input field="*{empresas.nitEmpresa}" class="form-control" type="number" placeholder="Nit Empresa" />
+                <form th:action="@{/empleados}" th:method="post" th:object="${empleados}" class="d-flex flex-column gap-3 aling-items-center">
+
+                <input th:field="*{identificacion}" class="form-control" type="number" placeholder="Identificacion" />
+                <input th:field="*{nombre}" class="form-control" type="text" placeholder="Nombre" />
+                <input th:field="*{correo}" class="form-control" type="text" placeholder="Correo" />
+                <input th:field="*{rol}" class="form-control" type="text" placeholder="Rol" />
+                <input th:field="*{empresas}" class="form-control" type="text" placeholder="Empresa" />
+                <input th:field="*{empresas.nitEmpresa}" class="form-control" type="number" placeholder="Nit Empresa" />
                 <button class="btn btn-primary btn-lg px-4 gap-3" type="submit">Crear Empleado</button>
-                <a href="/empleados" class="btn btn-outline-secondary px-4 gap-3" type="submit">Crear Empleado</a>
+                <a href="/empleados" class="btn btn-outline-secondary px-4 gap-3" type="submit">Cancelar</a>
 
             </form>
 

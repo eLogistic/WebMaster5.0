@@ -5,6 +5,7 @@ import com.webmasters50.eLogistic.entidades.Empleado;
 import com.webmasters50.eLogistic.servicios.ServiciosEmpleados;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -62,14 +63,21 @@ public class ControlEmpleados {
     }
 
 
-
+/*
     @PostMapping("/empleados")
     public Empleado crearEmpleado(@ModelAttribute Empleado e, Model model){
         model.addAttribute(e);
         return this.servicesE.crearEmpleado(e);
     }
 
+ */
 
+    @PostMapping("/empleados")
+    public RedirectView crearEmpleado(@ModelAttribute Empleado e, Model model){
+        model.addAttribute(e);
+        this.servicesE.crearEmpleado(e);
+       return new RedirectView("/empleados");
+    }
 
 
 //editar un registro
