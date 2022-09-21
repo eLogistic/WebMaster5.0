@@ -12,7 +12,7 @@ public class MovimientoDinero {
 
     //Atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long registroMovimiento;
     /*
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -54,13 +54,14 @@ public class MovimientoDinero {
         this.empresas = empresas;
     }
 
-    public long getRegistroMovimiento() {
+    public Long getRegistroMovimiento() {
         return registroMovimiento;
     }
 
     public void setRegistroMovimiento(Long registroMovimiento) {
         this.registroMovimiento = registroMovimiento;
     }
+
 
     public String getUsuarioEncargado() {
         return usuarioEncargado;
@@ -85,7 +86,7 @@ public class MovimientoDinero {
     public void setMontoMovimiento(double montoMovimiento) {
         this.montoMovimiento = montoMovimiento;
     }
-
+/*
     @Override
     public String toString() {
         return "MovimientoDinero{" +
@@ -94,6 +95,8 @@ public class MovimientoDinero {
                 ", montoMovimiento=" + montoMovimiento +
                 '}';
     }
+
+ */
 
 
 }

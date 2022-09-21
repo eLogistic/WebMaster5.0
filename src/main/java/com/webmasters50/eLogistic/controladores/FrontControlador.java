@@ -2,9 +2,11 @@ package com.webmasters50.eLogistic.controladores;
 
 import com.webmasters50.eLogistic.entidades.Empleado;
 import com.webmasters50.eLogistic.entidades.Empresa;
+import com.webmasters50.eLogistic.entidades.MovimientoDinero;
 import com.webmasters50.eLogistic.entidades.Usuario;
 import com.webmasters50.eLogistic.servicios.ServiciosEmpleados;
 import com.webmasters50.eLogistic.servicios.ServiciosEmpresas;
+import com.webmasters50.eLogistic.servicios.ServiciosMovimientoDinero;
 import com.webmasters50.eLogistic.servicios.ServiciosUsuarios;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
@@ -22,13 +24,15 @@ public class FrontControlador {
     //aqui se hace uso de los servicios de usuarios
     ServiciosUsuarios serviceUs;
     ServiciosEmpresas servicesEmpre;
+    ServiciosMovimientoDinero servicesMov;
 
 
 
-    public FrontControlador(ServiciosEmpleados servicesE, ServiciosUsuarios serviceUs, ServiciosEmpresas servicesEmpre) {
+    public FrontControlador(ServiciosEmpleados servicesE, ServiciosUsuarios serviceUs, ServiciosEmpresas servicesEmpre, ServiciosMovimientoDinero servicesMov) {
         this.servicesE = servicesE;
         this.serviceUs = serviceUs;
         this.servicesEmpre = servicesEmpre;
+        this.servicesMov = servicesMov;
     }
 //crea elementos de tipo string para visualizar etiquetas html creadas
 
@@ -92,6 +96,28 @@ public class FrontControlador {
         Empresa empresaFind = this.servicesEmpre.getLlamarEmpre(id);
         model.addAttribute("empresaFind", empresaFind);
         return "actualizar-empresa";
+    }
+
+    //metodos movimientos
+
+    @GetMapping("/movimientos")
+    public String movimientos(Model modelE){
+        List<MovimientoDinero> movimientos = this.servicesMov.getListaMovDinero();
+        modelE.addAttribute("movimientos", movimientos);
+        return "movimientos";
+    }
+
+    @GetMapping("movimientos/nuevo")
+    public String nuevoMovimiento(Model modelNuevoMovimiento){
+        modelNuevoMovimiento.addAttribute("movimientos", new MovimientoDinero());
+        return "nuevo-movimiento";
+    }
+
+    @GetMapping("/movimientos/{id}")
+    public String actualizarMovimiento(@PathVariable Long id, Model model){
+        MovimientoDinero movimientoFind = this.servicesMov.getLlamarMovimiento(id);
+        model.addAttribute("movimientoFind", movimientoFind);
+        return "actualizar-movimiento";
     }
 
 
