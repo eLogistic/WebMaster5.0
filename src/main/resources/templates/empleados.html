@@ -11,13 +11,14 @@
 <body>
 <main>
     <div class="px-4 py-5 my-2 text-center">
+        <img src="img/logo.png" class="d-block mx-auto my-auto mb-4" height="150" alt="Spring Boot"/>
         <h1 class="display-5 fw-bold mb-4">Empleados</h1>
         <div class="d-flex justify-content-center gap-3">
 
 <!-- estas son las tarjetas de los empleados-->
 
             <div th:each="empleados:${empleados}" class="card" style="width: 18rem;">
-                <img src="img/user.png"  class="d-block mx-auto my-5 mb-4" alt="Usuario" height="170">
+                <img src="img/user.png"  class="d-block mx-auto my-5 mb-4" alt="Usuario" height="100">
                 <div class="card-body">
                     <h4 th:text="${empleados.nombre}" class="card-title"></h4>
                     <h6 class="card-title">Documento</h6>
@@ -41,18 +42,18 @@
                         </form>
 
                     </div>
-
-
-
                 </div>
             </div>
         </div>
 
         <div class="px-4 py-5 my-5 text-center">
             <a href="/empleados/nuevo" type="button" class="btn btn-primary btn-lg px-5 gap-3">Crear Empleado</a>
+          </div>
+
+        <div class="px-4 py-5 my-5 text-center">
+            <a href="/empresas" type="button" class="btn btn-outline-secondarybtn-lg px-5 gap-3">Empresas</a>
+            <a href="/movimientos" type="button" class="btn btn-outline-secondarybtn-lg px-5 gap-3">Movimientos</a>
             <a href="/" type="button" class="btn btn-outline-secondary btn-lg px-5 gap-3">Inicio</a>
-
-
         </div>
 
     </div>

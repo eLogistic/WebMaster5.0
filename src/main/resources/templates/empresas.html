@@ -11,13 +11,14 @@
 <body>
 <main>
   <div class="px-4 py-5 my-2 text-center">
+    <img src="img/logo.png" class="d-block mx-auto my-auto mb-4" height="150" alt="Spring Boot"/>
     <h1 class="display-5 fw-bold mb-4">Empresas</h1>
     <div class="d-flex justify-content-center gap-3">
 
       <!-- estas son las tarjetas de las empresas-->
 
       <div th:each="empresas:${empresas}" class="card" style="width: 18rem;">
-        <img src="img/user.png"  class="d-block mx-auto my-5 mb-4" alt="Usuario" height="170">
+        <img src="img/factory.png"  class="d-block mx-auto my-5 mb-4" alt="Usuario" height="100">
         <div class="card-body">
           <h4 th:text="${empresas.nombreEmpresa}" class="card-title"></h4>
           <h6 class="card-title">Nit</h6>
@@ -46,9 +47,12 @@
 
     <div class="px-4 py-5 my-5 text-center">
       <a href="/empresas/nuevo" type="button" class="btn btn-primary btn-lg px-5 gap-3">Crear Empresas</a>
+    </div>
+
+    <div class="px-4 py-5 my-5 text-center">
+      <a href="/empleados" type="button" class="btn btn-outline-secondary btn-lg px-5 gap-3">Empleados</a>
+      <a href="/movimientos" type="button" class="btn btn-outline-secondary btn-lg px-5 gap-3">Movimientos</a>
       <a href="/" type="button" class="btn btn-outline-secondary btn-lg px-5 gap-3">Inicio</a>
-
-
     </div>
 
   </div>
