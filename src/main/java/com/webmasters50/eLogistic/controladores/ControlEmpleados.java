@@ -56,14 +56,12 @@ public class ControlEmpleados {
         return this.servicesE.getListaEmpleados();
     }
 
- */
+
     @GetMapping("/empleados/{id}")
     public Empleado llamarEmpleado(@PathVariable Long id){
         return this.servicesE.getLlamarEmpleado(id);
     }
 
-
-/*
     @PostMapping("/empleados")
     public Empleado crearEmpleado(@ModelAttribute Empleado e, Model model){
         model.addAttribute(e);
@@ -79,20 +77,35 @@ public class ControlEmpleados {
        return new RedirectView("/empleados");
     }
 
-
-//editar un registro
-
+    /*
+    //editar un registro
     @PutMapping("/empleados/{id}")
     public Empleado actualizarEmpleado(@PathVariable Long id, @RequestBody Empleado actEmpleado){
 
         return this.servicesE.actualizarE(id, actEmpleado);
+    }
+     */
 
+    //editar un registro
+    @PutMapping("/empleados/{id}")
+    public RedirectView actualizarEmpleado(@PathVariable Long id, Empleado actEmpleado){
+        this.servicesE.actualizarE(id, actEmpleado);
+        return new RedirectView("/empleados");
     }
 
+
+/*
     //borrar un registro
     @DeleteMapping("/eliminar/{id}")
     public Empleado eliminarEmpleado(@PathVariable(value = "id") Long id){
         return this.servicesE.eliminarP(id);
+    }
+ */
+//borrar un registro
+    @DeleteMapping("/empleados/{id}")
+    public RedirectView eliminarEmpleado(@PathVariable(value = "id") Long id){
+        this.servicesE.eliminarP(id);
+        return new RedirectView("/empleados");
     }
 
 }
