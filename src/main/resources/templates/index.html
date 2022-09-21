@@ -10,6 +10,19 @@
 </head>
 <body>
 <main>
+
+    <div class="row align-items-cebter">
+        <div sec:authorize="isAuthenticated()">
+            <h5 th:text="'Bienvenido: ' + ${usuario.getEmail()}" align="right"></h5>
+
+        </div>
+
+
+    </div>
+
+
+
+
     <div class="px-4 py-4 mx-5 my-0 text-center">
         <img src="img/logo.png" class="d-block mx-auto my-auto mb-4" height="250" alt="Spring Boot"/>
         <h1 class="display-5 fw-bold">Web Masters 5.0</h1>
