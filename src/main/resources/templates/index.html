@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,12 +10,31 @@
 </head>
 <body>
 <main>
+
+    <div class="row align-items-cebter">
+        <div sec:authorize="isAuthenticated()">
+            <h5 th:text="'Bienvenido: ' + ${usuario.getEmail()}" align="right"></h5>
+
+        </div>
+
+
+    </div>
+
+
+
+
     <div class="px-4 py-4 mx-5 my-0 text-center">
         <img src="img/logo.png" class="d-block mx-auto my-auto mb-4" height="250" alt="Spring Boot"/>
         <h1 class="display-5 fw-bold">Web Masters 5.0</h1>
         <div class="col-lg-6 mx-auto">
             <p>Profesionales al servicio de tus requerimientos</p>
-            <a href="empleados" type="button" class="btn btn-primary btn-lg px-5 gap-3">Ingresar</a>
+            <div sec:authorize="!isAuthenticated()">
+                <a th:href="@{/oauth2/authorization/auth0}" type="button" class="btn btn-primary btn-lg px-5 gap-3">Iniciar sesión</a>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <a href="/empleados" type="button" class="btn btn-primary btn-lg px-5 gap-3">Ir al aplicativo</a>
+            </div>
+
             <button type="button" class="btn btn-outline-secondary btn-lg px-5">Detalles</button>
         </div>
     </div>

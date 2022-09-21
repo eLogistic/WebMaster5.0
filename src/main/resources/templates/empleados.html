@@ -20,12 +20,30 @@
                 <img src="img/user.png"  class="d-block mx-auto my-5 mb-4" alt="Usuario" height="170">
                 <div class="card-body">
                     <h4 th:text="${empleados.nombre}" class="card-title"></h4>
-                    <h6 class="card-title">Información General</h6>
+                    <h6 class="card-title">Documento</h6>
+                    <p th:text="${empleados.identificacion}" class="card-text"></p>
+                    <h6 class="card-title">Correo</h6>
                     <p th:text="${empleados.correo}" class="card-text"></p>
+                    <h6 class="card-title">Empresa</h6>
                     <p th:text="${empleados.empresa}" class="card-text"></p>
+                    <h6 class="card-title">Nit Empresa</h6>
                     <p th:text="${empleados.empresas.nitEmpresa}" class="card-text"></p>
+                    <h6 class="card-title">Cargo</h6>
                     <p th:text="${empleados.rol}" class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Ver Información</a>
+
+                    <div class="d-flex gap-1 justify-content-center">
+                        <form th:action="@{/empleados/{id}(id=${empleados.identificacion})}" th:method="get">
+                            <button type="submit" class="btn btn-primary">Editar</button>
+                        </form>
+
+                        <form th:action="@{/empleados/{id}(id=${empleados.identificacion})}" th:method="delete">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
