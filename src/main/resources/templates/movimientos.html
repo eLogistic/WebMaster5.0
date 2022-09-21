@@ -19,6 +19,7 @@
       <div th:each="movimientos:${movimientos}" class="card" style="width: 18rem;">
         <img src="img/user.png"  class="d-block mx-auto my-5 mb-4" alt="Movimiento" height="170">
         <div class="card-body">
+          <h6 class="card-title">Consecutivo</h6>
           <h4 th:text="${movimientos.registroMovimiento}" class="card-title"></h4>
           <h6 class="card-title">Usuario</h6>
           <p th:text="${movimientos.usuarioEncargado}" class="card-text"></p>
@@ -26,6 +27,8 @@
           <p th:text="${movimientos.conceptoMovimiento}" class="card-text"></p>
           <h6 class="card-title">Monto</h6>
           <p th:text="${movimientos.montoMovimiento}" class="card-text"></p>
+          <h6 class="card-title">Nit Empresa</h6>
+          <p th:text="${movimientos.empresas.nitEmpresa}" class="card-text"></p>
 
 
           <div class="d-flex gap-1 justify-content-center">

@@ -12,7 +12,7 @@ public class MovimientoDinero {
 
     //Atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long registroMovimiento;
     /*
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,10 +25,14 @@ public class MovimientoDinero {
     @Column(name="montoMovimiento")
     private double montoMovimiento;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    //@ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "nitEmpresa", nullable = false)
     @JsonIgnoreProperties(value = "movimientos")
     private Empresa empresas;
+
+
+
     //Constructor
 
     public MovimientoDinero() {
