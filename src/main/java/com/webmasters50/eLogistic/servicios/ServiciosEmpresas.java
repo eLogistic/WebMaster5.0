@@ -62,6 +62,8 @@ public class ServiciosEmpresas {
         Empresa empresaActual = repositorioEmpre.findById(id).orElseThrow();
         empresaActual.setNombreEmpresa(e.getNombreEmpresa());
         //empresaActual.setNitEmpresa(e.getNitEmpresa());
+        empresaActual.setDireccionEmpresa(e.getDireccionEmpresa());
+        empresaActual.setTelefonoEmpresa(e.getTelefonoEmpresa());
         return this.repositorioEmpre.save(empresaActual);
     }
 
