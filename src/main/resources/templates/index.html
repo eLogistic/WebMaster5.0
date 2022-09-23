@@ -11,7 +11,7 @@
 <body>
 <main>
 
-    <div class="row align-items-cebter">
+    <div class="row align-items-center">
         <div sec:authorize="isAuthenticated()">
             <h5 th:text="'Bienvenido: ' + ${usuario.getEmail()}" align="right"></h5>
 

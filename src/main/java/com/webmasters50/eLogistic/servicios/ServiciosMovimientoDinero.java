@@ -62,6 +62,7 @@ public class ServiciosMovimientoDinero {
         MovimientoDinero movimientoActual = repositorioMovDinero.findById(id).orElseThrow();
         movimientoActual.setConceptoMovimiento(m.getConceptoMovimiento());
         movimientoActual.setMontoMovimiento(m.getMontoMovimiento());
+        movimientoActual.setUsuarioEncargado(m.getUsuarioEncargado());
         return this.repositorioMovDinero.save(movimientoActual);
     }
 

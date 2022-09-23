@@ -25,10 +25,14 @@ public class MovimientoDinero {
     @Column(name="montoMovimiento")
     private double montoMovimiento;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    //@ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "nitEmpresa", nullable = false)
     @JsonIgnoreProperties(value = "movimientos")
     private Empresa empresas;
+
+
+
     //Constructor
 
     public MovimientoDinero() {
@@ -54,13 +58,14 @@ public class MovimientoDinero {
         this.empresas = empresas;
     }
 
-    public long getRegistroMovimiento() {
+    public Long getRegistroMovimiento() {
         return registroMovimiento;
     }
 
     public void setRegistroMovimiento(Long registroMovimiento) {
         this.registroMovimiento = registroMovimiento;
     }
+
 
     public String getUsuarioEncargado() {
         return usuarioEncargado;
@@ -85,7 +90,7 @@ public class MovimientoDinero {
     public void setMontoMovimiento(double montoMovimiento) {
         this.montoMovimiento = montoMovimiento;
     }
-
+/*
     @Override
     public String toString() {
         return "MovimientoDinero{" +
@@ -94,6 +99,8 @@ public class MovimientoDinero {
                 ", montoMovimiento=" + montoMovimiento +
                 '}';
     }
+
+ */
 
 
 }
